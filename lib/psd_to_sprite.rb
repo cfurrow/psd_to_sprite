@@ -34,7 +34,7 @@ module PsdToSprite
 
     def collect_pngs_from_layers(layers)
       pngs = []
-      layers.each do |layer|
+      layers.reverse.each do |layer|
         pngs << layer.to_png
       end
       pngs
