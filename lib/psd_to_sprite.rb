@@ -44,7 +44,7 @@ module PsdToSprite
         frame = layer.image.to_png
         frame_img = Magick::Image.from_blob(frame.to_s).first
 
-        img = img.composite(frame_img, x, layer.top, Magick::AddCompositeOp)
+        img = img.composite(frame_img, x + layer.left, layer.top, Magick::AddCompositeOp)
         x += frame_width
       end
       img
